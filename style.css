@@ -1,10 +1,14 @@
 * {
-    font-family: "Poppins", sans-serif;
-  }
+  font-family: "Poppins", sans-serif;
+}
 
 .carousel-images {
-    height: 350px;
-    object-fit: cover;
+  height: 350px;
+  object-fit: cover;
+}
+
+.logo-image {
+  width: 80px;
 }
 
 /* .card img {

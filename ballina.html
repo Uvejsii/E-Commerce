@@ -11,6 +11,10 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,66 +26,17 @@
   <body>
     <header>
       <nav class="navbar navbar-expand-lg bg-danger">
-        <div class="container-fluid">
-          <a class="navbar-brand text-light fw-bold" href="ballina.html">
-            <img
-              src="./Fotot/logo.png"
-              alt="logo"
-              class="img-fuid w-25 rounded-4"
-            />
-            E-SHOP
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a
-                  class="nav-link fs-5 fw-semibold text-dark"
-                  aria-current="page"
-                  href="#"
-                  >Home</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link fs-5 fw-semibold text-dark border-start border-end border-2"
-                  href="#"
-                  >Link</a
-                >
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link fs-5 fw-semibold text-dark border-end border-2"
-                  href="#"
-                  aria-expanded="false"
-                >
-                  Text
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fs-5 fw-semibold text-dark" href="#"
-                  >Disabled</a
-                >
-              </li>
-            </ul>
+        <div class="container-fluid d-flex justify-content-between">
+          <div>
+            <a class="navbar-brand text-light fw-bold" href="ballina.html">
+              <img
+                src="./Fotot/logo.png"
+                alt="logo"
+                class="img-fuid rounded-4 logo-image"
+              />
+            </a>
+          </div>
+          <div class="w-50">
             <form class="d-flex" role="search">
               <input
                 class="form-control me-2"
@@ -90,9 +45,65 @@
                 aria-label="Search"
               />
               <button class="btn bg-light text-danger fw-bold" type="submit">
-                Search
+                <i class="bi bi-search"></i>
               </button>
             </form>
+          </div>
+          <div>
+            <button
+              class="navbar-toggler p-0"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a
+                    class="nav-link fs-5 fw-semibold text-light"
+                    aria-current="page"
+                    href="#"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link fs-5 fw-semibold text-light border-2"
+                    href="#"
+                    >Link</a
+                  >
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link fs-5 fw-semibold text-light"
+                    href="#"
+                    aria-expanded="false"
+                  >
+                    Text
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Another action</a>
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fs-5 fw-semibold text-light" href="#"
+                    >Disabled</a
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </nav>
@@ -189,7 +200,6 @@
         </button>
       </div>
     </section>
-
     <main class="my-5">
       <div class="container">
         <div class="row row-cols-2 row-cols-md-4 g-4">
@@ -292,9 +302,72 @@
         </div>
       </div>
     </main>
-    <footer>
-        <p>Pershendetje nga giti</p>
-    </footer>
+    <div class="container-fluid bg-danger fw-semibold text-light p-0">
+      <footer class="d-flex flex-wrap align-items-center py-3 border-top">
+        <div class="col-md-4 col-lg-3 col-xl-3 d-flex align-items-center">
+          <a
+            href="/"
+            class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1"
+          >
+            <svg class="bi" width="30" height="24">
+              <use xlink:href="#bootstrap" />
+            </svg>
+          </a>
+          <span class="mb-3 mb-md-0 text-light">&copy; 2023 E-Shop</span>
+        </div>
+        <ul
+          class="nav fs-5 col-md-1 justify-content-between list-unstyled d-flex col-lg-1 col-xl-1 mx-auto mb-md-0 mb-4"
+        >
+          <li class="">
+            <a
+              class="text-body-secondary"
+              href="https://www.instagram.com/"
+              target="_blank"
+              ><i class="bi bi-instagram text-light"></i
+            ></a>
+          </li>
+          <li class="ms-3">
+            <a
+              class="text-body-secondary"
+              href="https://www.facebook.com/"
+              target="_blank"
+              ><i class="bi bi-facebook text-light"></i
+            ></a>
+          </li>
+          <li class="ms-3">
+            <a
+              class="text-body-secondary"
+              href="https://twitter.com/?lang=en"
+              target="_blank"
+              ><i class="bi bi-twitter text-light"></i
+            ></a>
+          </li>
+        </ul>
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p>
+            <a href="#" class="link-dark"
+              ><i class="bi bi-geo-alt me-1 text-light"></i></a
+            >Prishtine, Rr.Muharrem Fejza, KS
+          </p>
+          <p>
+            <a href="#" class="link-dark"
+              ><i class="bi bi-envelope me-1 text-light"></i></a
+            >e-shop@gmail.com
+          </p>
+          <p>
+            <a href="#" class="link-dark"
+              ><i class="bi bi-telephone me-1 text-light"></i></a
+            >+ 383 44 800 800
+          </p>
+          <p>
+            <a href="#" class="link-dark"
+              ><i class="bi bi-telephone me-1 text-light"></i></a
+            >+ 383 45 800 800
+          </p>
+        </div>
+      </footer>
+    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
