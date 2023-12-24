@@ -177,6 +177,10 @@ const products = [
   },
 ];
 
+function fixPrice(priceCents) {
+  return (Math.round(priceCents) / 100).toFixed(2);
+}
+
 let productsHTML = "";
 
 products.forEach((product) => {
@@ -195,9 +199,9 @@ products.forEach((product) => {
           <p class="card-text ">
            ${product.desc}
           </p>
-          <p>${product.priceCents} &euro;</p>
+          <p>${fixPrice(product.priceCents)} &euro;</p>
           <button class="btn btn-danger w-100">Shto ne shporte<i class="bi bi-bag ms-2"></i></button>
-      </div>
+      </div> 
      </div>
    </div>
    `;
