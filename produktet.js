@@ -186,7 +186,7 @@ let productsHTML = "";
 products.forEach((product) => {
   productsHTML += `
    <div class="col">
-     <div class="card shadow-sm">
+     <div class="card shadow-lg">
       <img src="${product.image}" class="card-img-top" alt="..." />
        <div class="card-body">
        <div class="rating d-flex justify-content-between align-items-center mb-2">
@@ -200,7 +200,7 @@ products.forEach((product) => {
            ${product.desc}
           </p>
           <p>${fixPrice(product.priceCents)} &euro;</p>
-          <button class="btn btn-danger w-100">Shto ne shporte<i class="bi bi-bag ms-2"></i></button>
+          <button class="btn btn-danger w-100">Shto ne<i class="bi bi-bag ms-2"></i></button>
       </div> 
      </div>
    </div>

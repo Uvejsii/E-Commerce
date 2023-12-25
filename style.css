@@ -18,6 +18,7 @@
 .search-btn:hover {
   color: white !important;
   background-color: #d9534f !important;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.6);
 }
 
 .card {
