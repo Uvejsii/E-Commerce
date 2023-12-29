@@ -200,7 +200,9 @@ products.forEach((product) => {
            ${product.desc}
           </p>
           <p>${fixPrice(product.priceCents)} &euro;</p>
-          <button class="btn btn-danger w-100">Shto ne<i class="bi bi-bag ms-2"></i></button>
+          <button class="btn btn-danger add-to-cart-btn w-100" data-product-id="${
+            product.id
+          }">Shto ne<i class="bi bi-bag ms-2"></i></button>
       </div> 
      </div>
    </div>
@@ -209,3 +211,35 @@ products.forEach((product) => {
 
 let productCard = document.getElementById("products-container");
 productCard.innerHTML = productsHTML;
+
+let addBtn = document.querySelectorAll(".add-to-cart-btn");
+
+addBtn.forEach((button) => {
+  button.addEventListener("click", () => {
+    const productId = button.dataset.productId;
+    let matchingItem;
+
+    cart.forEach((item) => {
+      if (productId === item.productId) {
+        matchingItem = item;
+      }
+    });
+
+    if (matchingItem) {
+      matchingItem.quantity += 1;
+    } else {
+      cart.push({
+        productId: productId,
+        quantity: 1,
+      });
+    }
+
+    let cartQuantity = 0;
+
+    cart.forEach((item) => {
+      cartQuantity += item.quantity;
+    });
+
+    document.querySelector(".card-quantity").innerHTML = cartQuantity;
+  });
+});

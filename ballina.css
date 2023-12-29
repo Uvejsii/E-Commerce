@@ -21,17 +21,14 @@
   box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.6);
 }
 
-.card {
-  transition: all 0.3s;
-}
-
-.card:hover {
-  transform: scale(1.1);
-}
-
 .card-img-top {
   height: 200px;
   object-fit: contain;
+  transition: all 0.3s;
+}
+
+.card-img-top:hover {
+  transform: scale(0.9);
 }
 
 .btn {
