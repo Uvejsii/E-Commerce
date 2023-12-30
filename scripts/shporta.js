@@ -1,16 +1,24 @@
 import { products } from "./produktet.js";
 import { fixPrice } from "./money.js";
 
-export let cart = [
-  {
-    productId: "3a",
-    quantity: 2,
-  },
-  {
-    productId: "2a",
-    quantity: 1,
-  },
-];
+export let cart = JSON.parse(localStorage.getItem("cart"));
+
+if (!cart) {
+  cart = [
+    {
+      productId: "3a",
+      quantity: 2,
+    },
+    {
+      productId: "2a",
+      quantity: 1,
+    },
+  ];
+}
+
+function saveToStorage() {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
 
 export function addToCart(productId) {
   const addedMessage = document.querySelector(`.js-added-to-cart-${productId}`);
@@ -35,6 +43,8 @@ export function addToCart(productId) {
       quantity: 1,
     });
   }
+
+  saveToStorage();
 }
 
 let cartHTML = "";
@@ -51,7 +61,7 @@ cart.forEach((cartItem) => {
   });
 
   cartHTML += `
-    <div class="card mb-3 shadow-lg">
+    <div class="card mb-3 shadow-lg cart-item-container-${matchingProduct.id}">
         <div class="row g-0">
             <div class="col-md-4 d-flex align-items-center justify-content-center">
                 <img
@@ -97,12 +107,18 @@ function removeFromCart(productId) {
   });
 
   cart = newCart;
+
+  saveToStorage();
 }
 
 document.querySelectorAll(".delete-btn").forEach((btn) => {
   btn.addEventListener("click", () => {
     const productId = btn.dataset.productId;
     removeFromCart(productId);
-    console.log(cart);
+
+    const container = document.querySelector(
+      `.cart-item-container-${productId}`
+    );
+    container.remove();
   });
 });
