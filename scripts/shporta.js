@@ -51,7 +51,6 @@ let cartHTML = "";
 
 cart.forEach((cartItem) => {
   const productId = cartItem.productId;
-
   let matchingProduct;
 
   products.forEach((product) => {
@@ -60,35 +59,83 @@ cart.forEach((cartItem) => {
     }
   });
 
-  cartHTML += `
-    <div class="card mb-3 shadow-lg cart-item-container-${matchingProduct.id}">
-        <div class="row g-0">
-            <div class="col-md-4 d-flex align-items-center justify-content-center">
-                <img
-                    src="${matchingProduct.image}"
-                    class="img-fluid rounded-start"
-                    alt="..."
-                />
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title fw-semibold">${
-                      matchingProduct.name
-                    }</h5>
-                    <p class="card-text fw-bold text-danger">${fixPrice(
-                      matchingProduct.priceCents
-                    )} &euro;</p>
-                    <p class="card-text fw-bold">
-                    Sasia: ${cartItem.quantity}
-                    </p>
-                    <button class="btn btn-outline-danger delete-btn fw-semibold" data-product-id="${
-                      matchingProduct.id
-                    }">Hiq nga shporta</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    `;
+  cart.forEach((cartItem) => {
+    const productId = cartItem.productId;
+
+    let matchingProduct;
+
+    products.forEach((product) => {
+      if (product.id === productId) {
+        matchingProduct = product;
+      }
+    });
+
+    cartHTML += `
+      <div class="card mb-3 shadow-lg cart-item-container-${
+        matchingProduct.id
+      }">
+          <div class="row g-0">
+              <div class="col-md-4 d-flex align-items-center justify-content-center">
+                  <img
+                      src="${matchingProduct.image}"
+                      class="img-fluid rounded-start"
+                      alt="..."
+                  />
+              </div>
+              <div class="col-md-8">
+                  <div class="card-body">
+                      <h5 class="card-title fw-semibold">${
+                        matchingProduct.name
+                      }</h5>
+                      <p class="card-text fw-bold text-danger">${fixPrice(
+                        matchingProduct.priceCents
+                      )} &euro;</p>
+                      <p class="card-text fw-bold">
+                      Sasia: ${cartItem.quantity}
+                      </p>
+                      <button class="btn btn-outline-danger delete-btn fw-semibold w-100" data-product-id="${
+                        matchingProduct.id
+                      }">Hiq nga shporta</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+      `;
+  });
+
+  // if (matchingProduct) {
+  //   cartHTML += `
+  //   <div class="card mb-3 shadow-lg cart-item-container-${matchingProduct.id}">
+  //       <div class="row g-0">
+  //           <div class="col-md-4 d-flex align-items-center justify-content-center">
+  //               <img
+  //                   src="${matchingProduct.image}"
+  //                   class="img-fluid rounded-start"
+  //                   alt="..."
+  //               />
+  //           </div>
+  //           <div class="col-md-8">
+  //               <div class="card-body">
+  //                   <h5 class="card-title fw-semibold">${
+  //                     matchingProduct.name
+  //                   }</h5>
+  //                   <p class="card-text fw-bold text-danger">${fixPrice(
+  //                     matchingProduct.priceCents
+  //                   )} &euro;</p>
+  //                   <p class="card-text fw-bold">
+  //                   Sasia: ${cartItem.quantity}
+  //                   </p>
+  //                   <button class="btn btn-outline-danger delete-btn fw-semibold w-100" data-product-id="${
+  //                     matchingProduct.id
+  //                   }">Hiq nga shporta</button>
+  //               </div>
+  //           </div>
+  //       </div>
+  //   </div>
+  //   `;
+  // } else {
+  //   console.error(`No matching product found for ID: ${productId}`);
+  // }
 });
 
 let addedContainer = document.querySelector(".added-products");
