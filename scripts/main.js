@@ -1,9 +1,6 @@
 import { cart, addToCart } from "./shporta.js";
 import { products } from "./produktet.js";
-
-function fixPrice(priceCents) {
-  return (Math.round(priceCents) / 100).toFixed(2);
-}
+import { fixPrice } from "./money.js";
 
 let productsHTML = "";
 

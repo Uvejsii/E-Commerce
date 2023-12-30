@@ -1,6 +1,7 @@
 import { products } from "./produktet.js";
+import { fixPrice } from "./money.js";
 
-export const cart = [
+export let cart = [
   {
     productId: "3a",
     quantity: 2,
@@ -64,14 +65,15 @@ cart.forEach((cartItem) => {
                     <h5 class="card-title fw-semibold">${
                       matchingProduct.name
                     }</h5>
-                    <p class="card-text fw-semibold">${
-                      matchingProduct.priceCents / 100
-                    } &euro;</p>
+                    <p class="card-text fw-bold text-danger">${fixPrice(
+                      matchingProduct.priceCents
+                    )} &euro;</p>
                     <p class="card-text fw-bold">
-                    Sasia: <span>${
-                      cartItem.quantity
-                    }</span> <a href="" class="ms-3">Hiq nga shporta</a>
+                    Sasia: ${cartItem.quantity}
                     </p>
+                    <button class="btn btn-outline-danger delete-btn fw-semibold" data-product-id="${
+                      matchingProduct.id
+                    }">Hiq nga shporta</button>
                 </div>
             </div>
         </div>
@@ -80,6 +82,27 @@ cart.forEach((cartItem) => {
 });
 
 let addedContainer = document.querySelector(".added-products");
+
 if (addedContainer) {
   addedContainer.innerHTML = cartHTML;
 }
+
+function removeFromCart(productId) {
+  const newCart = [];
+
+  cart.forEach((cartItem) => {
+    if (cartItem.productId !== productId) {
+      newCart.push(cartItem);
+    }
+  });
+
+  cart = newCart;
+}
+
+document.querySelectorAll(".delete-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const productId = btn.dataset.productId;
+    removeFromCart(productId);
+    console.log(cart);
+  });
+});
