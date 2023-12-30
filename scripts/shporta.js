@@ -79,5 +79,7 @@ cart.forEach((cartItem) => {
     `;
 });
 
-document.querySelector(".added-products").innerHTML = cartHTML;
-console.log(cartHTML);
+let addedContainer = document.querySelector(".added-products");
+if (addedContainer) {
+  addedContainer.innerHTML = cartHTML;
+}
