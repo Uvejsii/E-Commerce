@@ -1,7 +1,7 @@
-const products = [
+export const products = [
   {
     id: "1a",
-    image: "./Fotot/Produktet/blinder.jpg",
+    image: "../Fotot/Produktet/blinder.jpg",
     name: "Blender",
     desc: "Pajisje kuzhine, performancë e lartë",
     rating: {
@@ -12,7 +12,7 @@ const products = [
   },
   {
     id: "2a",
-    image: "./Fotot/Produktet/cante-shpine-zeze.jpg",
+    image: "../Fotot/Produktet/cante-shpine-zeze.jpg",
     name: "Cante shpine",
     desc: "Cante shpine e zeze, me tre patente",
     rating: {
@@ -23,7 +23,7 @@ const products = [
   },
   {
     id: "3a",
-    image: "./Fotot/Produktet/duks-portokallt.jpg",
+    image: "../Fotot/Produktet/duks-portokallt.jpg",
     name: "Duks",
     desc: "Duks Adidas i portokallt, dizajn modern dhe i pershtashem",
     rating: {
@@ -34,7 +34,7 @@ const products = [
   },
   {
     id: "4a",
-    image: "./Fotot/Produktet/embrella.jpg",
+    image: "../Fotot/Produktet/embrella.jpg",
     name: "Embrella",
     desc: "Cader praktike Doppler London, e gjelber",
     rating: {
@@ -45,7 +45,7 @@ const products = [
   },
   {
     id: "5a",
-    image: "./Fotot/Produktet/kapele-dielli.webp",
+    image: "../Fotot/Produktet/kapele-dielli.webp",
     name: "Kapele dielli",
     desc: "Kapele dielli per plazhe, e verdhe me vija te zeza",
     rating: {
@@ -56,7 +56,7 @@ const products = [
   },
   {
     id: "6a",
-    image: "./Fotot/Produktet/kosh-mbeturinash-60-litersh.jpg",
+    image: "../Fotot/Produktet/kosh-mbeturinash-60-litersh.jpg",
     name: "Kosh plehrash",
     desc: "Kosh plehrash 60L me pedale, i argjente",
     rating: {
@@ -67,7 +67,7 @@ const products = [
   },
   {
     id: "7a",
-    image: "./Fotot/Produktet/meshkuj-golf-polo-maice-kalter.jpg",
+    image: "../Fotot/Produktet/meshkuj-golf-polo-maice-kalter.jpg",
     name: "Maice golf polo",
     desc: "Maice per meshkuj golf polo, e kalter",
     rating: {
@@ -78,7 +78,7 @@ const products = [
   },
   {
     id: "8a",
-    image: "./Fotot/Produktet/meshkuj-maice-pambuk-2-cope-kalter.jpg",
+    image: "../Fotot/Produktet/meshkuj-maice-pambuk-2-cope-kalter.jpg",
     name: "Maice pambuku",
     desc: "Maice pambuku 2-Cope, te kalterta ",
     rating: {
@@ -89,7 +89,7 @@ const products = [
   },
   {
     id: "9a",
-    image: "./Fotot/Produktet/meshkuj-pantolla-krem.jpg",
+    image: "../Fotot/Produktet/meshkuj-pantolla-krem.jpg",
     name: "Pantolla krem",
     desc: "Pantolla per meshkuj masa-XXL, krem",
     rating: {
@@ -100,7 +100,7 @@ const products = [
   },
   {
     id: "10a",
-    image: "./Fotot/Produktet/meshkuj-patike-gjelber.jpg",
+    image: "../Fotot/Produktet/meshkuj-patike-gjelber.jpg",
     name: "Patike per sport",
     desc: "Patike sportive per meshkuj, te gjelberta",
     rating: {
@@ -111,7 +111,7 @@ const products = [
   },
   {
     id: "11a",
-    image: "./Fotot/Produktet/meshkuj-syze-dielli-kafte.jpg",
+    image: "../Fotot/Produktet/meshkuj-syze-dielli-kafte.jpg",
     name: "Syze dielli",
     desc: "Syze kunder diellit Mont Blanc, te kafta",
     rating: {
@@ -122,7 +122,7 @@ const products = [
   },
   {
     id: "12a",
-    image: "./Fotot/Produktet/pjata-6-cope-seti.jpg",
+    image: "../Fotot/Produktet/pjata-6-cope-seti.jpg",
     name: "Set pjata 6-cope",
     desc: "Set pjata Lamart Dine, 6-cope, te bardha",
     rating: {
@@ -133,7 +133,7 @@ const products = [
   },
   {
     id: "13a",
-    image: "./Fotot/Produktet/top-basketbolli.jpg",
+    image: "../Fotot/Produktet/top-basketbolli.jpg",
     name: "Top Basketbolli",
     desc: "Top basketbolli Amazon Size-5, i kafte",
     rating: {
@@ -144,7 +144,7 @@ const products = [
   },
   {
     id: "14a",
-    image: "./Fotot/Produktet/toster-zeze.jpg",
+    image: "../Fotot/Produktet/toster-zeze.jpg",
     name: "Toster 1800W",
     desc: "Toster 1800W Esperanza me 2 vende, i zi",
     rating: {
@@ -155,7 +155,7 @@ const products = [
   },
   {
     id: "15a",
-    image: "./Fotot/Produktet/vath-lule.webp",
+    image: "../Fotot/Produktet/vath-lule.webp",
     name: "Vathe forme lule",
     desc: "Vathe forme luleje, 18 karatesh, guri i kaltert",
     rating: {
@@ -166,7 +166,7 @@ const products = [
   },
   {
     id: "16a",
-    image: "./Fotot/Produktet/vlues-uji.webp",
+    image: "../Fotot/Produktet/vlues-uji.webp",
     name: "Vlues uji 1.5L",
     desc: "Vlues uji Amazon 1.5L 2200W, transparent",
     rating: {
@@ -176,70 +176,3 @@ const products = [
     priceCents: 1499,
   },
 ];
-
-function fixPrice(priceCents) {
-  return (Math.round(priceCents) / 100).toFixed(2);
-}
-
-let productsHTML = "";
-
-products.forEach((product) => {
-  productsHTML += `
-   <div class="col">
-     <div class="card shadow-lg">
-      <img src="${product.image}" class="card-img-top" alt="..." />
-       <div class="card-body">
-       <div class="rating d-flex justify-content-between align-items-center mb-2">
-            <img src="./Fotot/Vleresimet/vleresimi-${
-              product.rating.stars * 10
-            }.png" class="w-50" alt="" />
-                <span>${product.rating.count}</span>
-        </div>
-         <h5 class="card-title fw-semibold">${product.name}</h5>
-          <p class="card-text ">
-           ${product.desc}
-          </p>
-          <p>${fixPrice(product.priceCents)} &euro;</p>
-          <button class="btn btn-danger add-to-cart-btn w-100" data-product-id="${
-            product.id
-          }">Shto ne<i class="bi bi-bag ms-2"></i></button>
-      </div> 
-     </div>
-   </div>
-   `;
-});
-
-let productCard = document.getElementById("products-container");
-productCard.innerHTML = productsHTML;
-
-let addBtn = document.querySelectorAll(".add-to-cart-btn");
-
-addBtn.forEach((button) => {
-  button.addEventListener("click", () => {
-    const productId = button.dataset.productId;
-    let matchingItem;
-
-    cart.forEach((item) => {
-      if (productId === item.productId) {
-        matchingItem = item;
-      }
-    });
-
-    if (matchingItem) {
-      matchingItem.quantity += 1;
-    } else {
-      cart.push({
-        productId: productId,
-        quantity: 1,
-      });
-    }
-
-    let cartQuantity = 0;
-
-    cart.forEach((item) => {
-      cartQuantity += item.quantity;
-    });
-
-    document.querySelector(".card-quantity").innerHTML = cartQuantity;
-  });
-});

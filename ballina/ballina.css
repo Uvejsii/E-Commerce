@@ -35,6 +35,14 @@
   font-size: 14px;
 }
 
+.added-to-cart {
+  opacity: 0;
+}
+
+.added-to-cart-visible {
+  opacity: 1;
+}
+
 @media (max-width: 1400px) {
   .card-text {
     display: -webkit-box;
@@ -51,7 +59,7 @@
   }
 }
 
-@media (max-width: 570px) {
+@media (max-width: 700px) {
   footer {
     flex-direction: column;
     gap: 25px;
