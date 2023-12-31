@@ -1,26 +1,22 @@
 import { cart, removeFromCart } from "./shporta.js";
-import { products } from "./produktet.js";
+import { products, getProduct } from "./produktet.js";
 import { fixPrice } from "./money.js";
+import { renderPaymentSummary } from "./paymentSummary.js";
 
 export function renderOrderSummary() {
   let cartHTML = "";
 
   cart.forEach((cartItem) => {
     const productId = cartItem.productId;
-    let matchingProduct;
 
-    products.forEach((product) => {
-      if (product.id === productId) {
-        matchingProduct = product;
-      }
-    });
+    const matchingProduct = getProduct(productId);
 
     cartHTML += `
-              <div class="card mb-3 shadow-lg cart-item-container-${
+              <div class="card mb-3 shadow-lg border-danger cart-item-container-${
                 matchingProduct.id
               }">
                   <div class="row g-0">
-                      <div class="col-md-4 d-flex align-items-center justify-content-center">
+                      <div class="col-md-4 d-flex align-items-center justify-content-center border border-danger rounded">
                           <img
                               src="${matchingProduct.image}"
                               class="img-fluid rounded-start"
@@ -29,20 +25,20 @@ export function renderOrderSummary() {
                       </div>
                       <div class="col-md-8">
                           <div class="card-body">
-                              <h5 class="card-title fw-semibold">${
-                                matchingProduct.name
-                              }</h5>
-                              <p class="card-text fw-bold text-danger">${fixPrice(
-                                matchingProduct.priceCents
-                              )} &euro;</p>
-                              <p class="card-text fw-bold">
-                              Sasia: ${cartItem.quantity}
-                              </p>
-                              <button class="btn btn-outline-danger delete-btn fw-semibold w-100" data-product-id="${
+                            <h5 class="card-title fw-semibold">${
+                              matchingProduct.name
+                            }</h5>
+                            <p class="card-text fw-bold text-danger">${fixPrice(
+                              matchingProduct.priceCents
+                            )} &euro;</p>
+                            <p class="card-text fw-bold ">
+                            Sasia: ${cartItem.quantity}
+                            </p>
+                              <button class="btn btn-outline-danger delete-btn fw-semibold w-100 shadow" data-product-id="${
                                 matchingProduct.id
                               }">Hiq nga shporta
                               </button>
-                          </div>
+                          </div>   
                       </div>
                   </div>
               </div>
@@ -60,6 +56,8 @@ export function renderOrderSummary() {
         `.cart-item-container-${productId}`
       );
       container.remove();
+
+      renderPaymentSummary();
     });
   });
 }
