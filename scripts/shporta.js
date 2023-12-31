@@ -1,16 +1,13 @@
-import { products } from "./produktet.js";
-import { fixPrice } from "./money.js";
-
 export let cart = JSON.parse(localStorage.getItem("cart"));
 
 if (!cart) {
   cart = [
     {
-      productId: "3a",
+      productId: "dd82ca78-a18b-4e2a-9250-31e67412f98d",
       quantity: 2,
     },
     {
-      productId: "2a",
+      productId: "a434b69f-1bc1-482d-9ce7-cd7f4a66ce8d",
       quantity: 1,
     },
   ];
@@ -47,104 +44,7 @@ export function addToCart(productId) {
   saveToStorage();
 }
 
-let cartHTML = "";
-
-cart.forEach((cartItem) => {
-  const productId = cartItem.productId;
-  let matchingProduct;
-
-  products.forEach((product) => {
-    if (product.id === productId) {
-      matchingProduct = product;
-    }
-  });
-
-  cart.forEach((cartItem) => {
-    const productId = cartItem.productId;
-
-    let matchingProduct;
-
-    products.forEach((product) => {
-      if (product.id === productId) {
-        matchingProduct = product;
-      }
-    });
-
-    cartHTML += `
-      <div class="card mb-3 shadow-lg cart-item-container-${
-        matchingProduct.id
-      }">
-          <div class="row g-0">
-              <div class="col-md-4 d-flex align-items-center justify-content-center">
-                  <img
-                      src="${matchingProduct.image}"
-                      class="img-fluid rounded-start"
-                      alt="..."
-                  />
-              </div>
-              <div class="col-md-8">
-                  <div class="card-body">
-                      <h5 class="card-title fw-semibold">${
-                        matchingProduct.name
-                      }</h5>
-                      <p class="card-text fw-bold text-danger">${fixPrice(
-                        matchingProduct.priceCents
-                      )} &euro;</p>
-                      <p class="card-text fw-bold">
-                      Sasia: ${cartItem.quantity}
-                      </p>
-                      <button class="btn btn-outline-danger delete-btn fw-semibold w-100" data-product-id="${
-                        matchingProduct.id
-                      }">Hiq nga shporta</button>
-                  </div>
-              </div>
-          </div>
-      </div>
-      `;
-  });
-
-  // if (matchingProduct) {
-  //   cartHTML += `
-  //   <div class="card mb-3 shadow-lg cart-item-container-${matchingProduct.id}">
-  //       <div class="row g-0">
-  //           <div class="col-md-4 d-flex align-items-center justify-content-center">
-  //               <img
-  //                   src="${matchingProduct.image}"
-  //                   class="img-fluid rounded-start"
-  //                   alt="..."
-  //               />
-  //           </div>
-  //           <div class="col-md-8">
-  //               <div class="card-body">
-  //                   <h5 class="card-title fw-semibold">${
-  //                     matchingProduct.name
-  //                   }</h5>
-  //                   <p class="card-text fw-bold text-danger">${fixPrice(
-  //                     matchingProduct.priceCents
-  //                   )} &euro;</p>
-  //                   <p class="card-text fw-bold">
-  //                   Sasia: ${cartItem.quantity}
-  //                   </p>
-  //                   <button class="btn btn-outline-danger delete-btn fw-semibold w-100" data-product-id="${
-  //                     matchingProduct.id
-  //                   }">Hiq nga shporta</button>
-  //               </div>
-  //           </div>
-  //       </div>
-  //   </div>
-  //   `;
-  // } else {
-  //   console.error(`No matching product found for ID: ${productId}`);
-  // }
-});
-
-let addedContainer = document.querySelector(".added-products");
-
-if (addedContainer) {
-  addedContainer.innerHTML = cartHTML;
-}
-
-function removeFromCart(productId) {
+export function removeFromCart(productId) {
   const newCart = [];
 
   cart.forEach((cartItem) => {
@@ -157,15 +57,3 @@ function removeFromCart(productId) {
 
   saveToStorage();
 }
-
-document.querySelectorAll(".delete-btn").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const productId = btn.dataset.productId;
-    removeFromCart(productId);
-
-    const container = document.querySelector(
-      `.cart-item-container-${productId}`
-    );
-    container.remove();
-  });
-});

@@ -13,8 +13,8 @@ export const products = [
   {
     id: "a434b69f-1bc1-482d-9ce7-cd7f4a66ce8d",
     image: "../Fotot/Produktet/pasqyre-silver.jpg",
-    name: "Paqyre Silver",
-    desc: "Paqyre Silver, masa e vogel",
+    name: "Pasqyre Silver",
+    desc: "Pasqyre Silver, levizese, masa e vogel",
     rating: {
       stars: 4,
       count: 37,
