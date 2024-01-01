@@ -58,6 +58,10 @@ addBtn.forEach((button) => {
   });
 });
 
+window.onload = function () {
+  updateCartQuantity();
+};
+
 const input = document.querySelector(".search-input");
 const searchBtn = document.querySelector(".search-btn");
 
