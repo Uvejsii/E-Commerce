@@ -18,7 +18,7 @@ products.forEach((product) => {
         </div>
         <h5 class="card-title fw-semibold">${product.name}</h5>
         <p class="card-text">${product.desc}</p>
-        <p class="fw-semibold">${fixPrice(product.priceCents)} &euro;</p>
+        <h5 class="fw-semibold">${fixPrice(product.priceCents)} &euro;</h5>
         <div class="added-to-cart js-added-to-cart-${
           product.id
         } d-flex align-items-center fw-semibold text-success position-absolute top-50 my-5">
@@ -109,5 +109,19 @@ function updateProducts(products) {
       </div>
     `;
     productsContainer.appendChild(productCard);
+
+    document.querySelector(".carousel").style.display = "none";
+    productsContainer.style.marginTop = "200px";
+  });
+  let addBtn = document.querySelectorAll(".add-to-cart-btn");
+
+  updateCartQuantity();
+  addBtn.forEach((button) => {
+    button.addEventListener("click", () => {
+      const productId = button.dataset.productId;
+
+      addToCart(productId);
+      updateCartQuantity();
+    });
   });
 }

@@ -42,7 +42,7 @@ export function renderPaymentSummary() {
   <div class="card-body">
     <div class="card-text">
       <div class="d-flex justify-content-between">
-        <p>Artikujt (${cartQuantity}):</p>
+        <p>Artikujt (<span class="text-danger">${cartQuantity}</span>):</p>
         <p>${fixPrice(productPriceCents)} &euro;</p>
       </div>
       <div class="d-flex justify-content-between">
