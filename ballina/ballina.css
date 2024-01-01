@@ -11,6 +11,10 @@
   object-fit: contain;
 }
 
+.carousel-caption {
+  position: sticky;
+}
+
 .logo-image {
   width: 80px;
 }

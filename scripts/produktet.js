@@ -125,7 +125,7 @@ export const products = [
     id: "4df68c27-fd59-4a6a-bbd1-e754ddb6d53c",
     image: "../Fotot/Produktet/meshkuj-syze-dielli-kafte.jpg",
     name: "Syze dielli",
-    desc: "Syze kunder diellit Mont Blanc, te kafta",
+    desc: "Syze kunder diellit Mont Blanc SOVL274, te kafta",
     rating: {
       stars: 4,
       count: 37,
